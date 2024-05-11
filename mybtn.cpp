@@ -6,16 +6,42 @@ MyBtn::MyBtn(QWidget *parent)
     : QPushButton{parent}
 {
     setFixedSize(170,50);
-}
+    setMouseTracking(true);
+    m_eventId = QEvent::registerEventType(QEvent::User + 1);
 
+}
+#if 1
+bool MyBtn::event(QEvent* ev)
+{
+    if (ev->type() ==  GetEventId()) {
+        qDebug() << " QEvent::My_event";
+        show();
+        return QWidget::event(ev);
+    }
+
+    return QWidget::event(ev);
+}
+#endif
+
+void MyBtn::showEvent(QShowEvent *ev)
+{
+    if (ev->type() ==  GetEventId()) {
+        qDebug() << " showEvent";
+    }
+}
 void MyBtn::mousePressEvent(QMouseEvent* event)
 {
-    if(event->button() == Qt::LeftButton)
+    qDebug() << GetEventId();
+    if (event->type() ==  GetEventId()) {
+        qDebug() << " QEvent::mousePressEvent";
+    }
+    else  if(event->button() == Qt::LeftButton)
     {
-
+        qDebug() << " mousePressEvent::My_event";
         m_pressTime = QTime::currentTime(); // 记录鼠标按下的时间
     }
 }
+
 void MyBtn::mouseReleaseEvent(QMouseEvent* event)
 {
     if(event->button() == Qt::LeftButton)
@@ -32,5 +58,10 @@ void MyBtn::mouseReleaseEvent(QMouseEvent* event)
             this->setText("");
         }
     }
+}
+
+int MyBtn::GetEventId()
+{
+    return m_eventId;
 }
 

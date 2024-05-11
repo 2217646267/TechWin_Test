@@ -25,10 +25,5 @@ private:
     void Init();
     void InitConnect();
 
-private:
-    QVector<QCheckBox*> m_CheckboxVct;
-    int m_number = 0;
-    QCheckBox* m_pPaterBox = nullptr;
-
 };
 #endif // WIDGET_H
