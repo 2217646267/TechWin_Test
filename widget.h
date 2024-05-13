@@ -10,6 +10,13 @@ class Widget;
 }
 QT_END_NAMESPACE
 
+struct FileRecord
+{
+    bool bChecked;
+    QString strFilePath;
+
+};
+
 class Widget : public QWidget
 {
     Q_OBJECT
@@ -23,6 +30,7 @@ private:
 
 private:
     void Init();
+    void InitDate();
     void InitConnect();
 
 };
