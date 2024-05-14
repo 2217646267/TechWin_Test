@@ -6,7 +6,7 @@ MyBtn::MyBtn(QWidget *parent)
     : QPushButton{parent}
 {
     setFixedSize(170,50);
-    setMouseTracking(true);
+   // setMouseTracking(true);
     m_eventId = QEvent::registerEventType(QEvent::User + 1);
 
 }
@@ -15,8 +15,8 @@ bool MyBtn::event(QEvent* ev)
 {
     if (ev->type() ==  GetEventId()) {
         qDebug() << " QEvent::My_event";
-        show();
         return QWidget::event(ev);
+        //return true;
     }
 
     return QWidget::event(ev);
@@ -31,7 +31,7 @@ void MyBtn::showEvent(QShowEvent *ev)
 }
 void MyBtn::mousePressEvent(QMouseEvent* event)
 {
-    qDebug() << GetEventId();
+   // qDebug() << GetEventId();
     if (event->type() ==  GetEventId()) {
         qDebug() << " QEvent::mousePressEvent";
     }

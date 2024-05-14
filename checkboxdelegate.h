@@ -18,7 +18,7 @@ private:
 protected:
     //绘画 //QStyleOptionViewItem 描述了在一个View控件中绘制对象的所有参数
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    //编辑  //提供在View上对数据进行渲染和修改的功能
+    //编辑
     bool editorEvent(QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &option, const QModelIndex &index);
 
 signals:
