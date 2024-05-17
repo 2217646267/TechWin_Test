@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QCheckBox>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -10,12 +11,6 @@ class Widget;
 }
 QT_END_NAMESPACE
 
-struct FileRecord
-{
-    bool bChecked;
-    QString strFilePath;
-
-};
 
 class Widget : public QWidget
 {
@@ -27,10 +22,10 @@ public:
 
 private:
     Ui::Widget *ui;
-
+    QLabel* m_pTipLabel;
+    int m_nPos = 0;
 private:
     void Init();
-    void InitDate();
     void InitConnect();
 
 };

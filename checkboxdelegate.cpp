@@ -52,6 +52,8 @@ bool CheckBoxDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, con
         {
             bool data = model->data(index, Qt::UserRole).toBool();
             model->setData(index, !data, Qt::UserRole);
+            //QString strdata = model->data(index, Qt::DisplayRole).toString();
+            //model->setData(index, strdata, Qt::DisplayRole);
         }
     }
 

@@ -3,8 +3,9 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <QPushButton>
 
-class PainterWidget : public QWidget
+class PainterWidget : public QPushButton
 {
     Q_OBJECT
 public:

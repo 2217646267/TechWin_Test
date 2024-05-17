@@ -13,7 +13,6 @@ void CheckboxWidget::Init()
 {
     this->setFixedSize(240,600);
 
-
     m_pPaterBox =  new QCheckBox(this);
     m_pPaterBox->setText(QString::fromLocal8Bit("饮料类型"));
 
@@ -42,6 +41,7 @@ void CheckboxWidget::Init()
     m_CheckboxVct.append(pSonBox_2);
     m_CheckboxVct.append(pSonBox_3);
     m_CheckboxVct.append(pSonBox_4);
+
 }
 
 void CheckboxWidget::InitConnect()

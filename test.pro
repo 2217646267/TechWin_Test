@@ -9,6 +9,8 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    BannerWidget.cpp \
+    HFrameEvent.cpp \
     checkboxdelegate.cpp \
     checkboxwidget.cpp \
     main.cpp \
@@ -16,16 +18,23 @@ SOURCES += \
     painterwidget.cpp \
     rightwidget.cpp \
     tablemodel.cpp \
-    widget.cpp
+    widget.cpp \
+    IconLabel.cpp\
+    LanelRotate.cpp
 
 HEADERS += \
+    BannerWidget.h \
+    HFrameEvent.h \
     checkboxdelegate.h \
     checkboxwidget.h \
     mybtn.h \
     painterwidget.h \
     rightwidget.h \
     tablemodel.h \
-    widget.h
+    widget.h \
+    IconLabel.h\
+    LanelRotate.h
+
 
 FORMS += \
     widget.ui

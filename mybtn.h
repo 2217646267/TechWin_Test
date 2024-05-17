@@ -17,12 +17,8 @@ protected:
     bool event(QEvent* ev)Q_DECL_OVERRIDE;
     void mousePressEvent(QMouseEvent* event)Q_DECL_OVERRIDE;
     void mouseReleaseEvent(QMouseEvent* event)Q_DECL_OVERRIDE;
-    void showEvent(QShowEvent *ev)Q_DECL_OVERRIDE;
 private:
    QTime m_pressTime;
-    int m_eventId = 0;
-public:
-   int GetEventId();
 };
 
 #endif // MYBTN_H

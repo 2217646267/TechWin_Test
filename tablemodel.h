@@ -7,7 +7,7 @@
 #include <QModelIndex>
 #include <QAbstractItemModel>
 #include <QAbstractListModel>
-#include "widget.h"
+#include "rightwidget.h"
 
 class TableModel : public QAbstractTableModel
 {
@@ -24,7 +24,6 @@ protected:
     QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const Q_DECL_OVERRIDE;
     Qt::ItemFlags flags(const QModelIndex &index) const Q_DECL_OVERRIDE;
-
 private:
     QList<FileRecord> m_recordList;
 signals:
